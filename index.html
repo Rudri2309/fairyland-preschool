@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fairyland Pre-School in Maninagar, Ahmedabad offers Montessori-based preschool and day care programs for toddlers, Nursery, Jr. KG, and Sr. KG children.">
+<meta name="theme-color" content="#3F91C5">
+<title>Fairyland Pre-School | The Sky For Angels | Maninagar, Ahmedabad</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #3F91C5; --sky-light: #A9D7E8; --sky-pale: #EAF6FA; --sky-deep: #1F6F9C;
+    --pink: #D98E82; --pink-soft: #F8D5CB; --yellow: #F4C84F; --yellow-soft: #FFF2C8;
+    --green: #A7C989; --green-soft: #DCEBD5; --lavender: #6F5D80; --lavender-soft: #E8DFED;
+    --peach: #ECA96C; --cream: #FFF9EA; --ink: #2D332F; --red-tm: #C7483F; --text-dark: #26342F; --text-mid: #5B6A64;
+    --logo-url: url('1000451399_eae68cceec2cdb8e3cc92b0abb4d5292-8_2_2025,%201_27_31%20PM.jpg');
+    --radius-xl: 28px; --radius-lg: 20px; --radius-md: 12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
+  body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Baloo 2',cursive;}
+  a,button,input,select,textarea{-webkit-tap-highlight-color:transparent;}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;}
+  .fn{color:var(--red-tm)!important;font-weight:800;}
+
+  .bubble-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+  .bubble{position:absolute;border-radius:50%;opacity:0.12;animation:floatUp linear infinite;}
+  @keyframes floatUp{0%{transform:translateY(110vh) rotate(0);opacity:0;}10%{opacity:0.12;}90%{opacity:0.12;}100%{transform:translateY(-15vh) rotate(28deg);opacity:0;}}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,249,234,0.92);backdrop-filter:blur(16px);border-bottom:2px solid rgba(45,51,47,0.12);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:74px;transition:box-shadow 0.25s,background 0.25s;}
+  nav.scrolled{background:rgba(255,249,234,0.98);box-shadow:0 8px 28px rgba(38,52,47,0.12);}
+  .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .nav-logo-icon{width:54px;height:54px;border-radius:50%;background:white;border:2px solid rgba(45,51,47,0.18);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(63,145,197,0.22);overflow:hidden;}
+  .nav-logo-icon img{width:100%;height:100%;object-fit:cover;transform:scale(1.28);}
+  .nav-logo-text .main{font-size:16px;font-weight:800;display:block;font-family:'Baloo 2',cursive;}
+  .nav-logo-text .sub{font-size:10px;color:var(--text-mid);font-weight:700;letter-spacing:0.4px;}
+  .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+  .nav-links a{text-decoration:none;color:var(--text-mid);font-size:13px;font-weight:700;padding:7px 12px;border-radius:50px;transition:all 0.2s;font-family:'Baloo 2',cursive;}
+  .nav-links a:hover{background:var(--sky-pale);color:var(--sky-deep);}
+  .nav-links a.active{background:var(--sky-pale);color:var(--sky-deep);}
+  .nav-enroll{background:var(--sky)!important;color:white!important;box-shadow:0 4px 14px rgba(91,200,245,0.45);}
+  .nav-enroll:hover{background:var(--sky-deep)!important;transform:translateY(-1px);}
+  .nav-rating{display:flex;align-items:center;gap:6px;background:var(--yellow-soft);border:2px solid var(--yellow);border-radius:50px;padding:5px 12px;font-size:12px;font-weight:800;color:#7A5800;}
+  .mobile-toggle{display:none;width:44px;height:44px;border:0;background:var(--sky-pale);border-radius:50%;align-items:center;justify-content:center;cursor:pointer;color:var(--sky-deep);position:relative;}
+  .mobile-toggle span,.mobile-toggle span::before,.mobile-toggle span::after{display:block;width:20px;height:2px;border-radius:2px;background:currentColor;transition:transform 0.25s,opacity 0.25s;}
+  .mobile-toggle span{position:relative;}
+  .mobile-toggle span::before,.mobile-toggle span::after{content:'';position:absolute;}
+  .mobile-toggle span::before{transform:translateY(-7px);}
+  .mobile-toggle span::after{transform:translateY(7px);}
+  .mobile-toggle.open span{background:transparent;}
+  .mobile-toggle.open span::before{background:var(--sky-deep);transform:rotate(45deg);}
+  .mobile-toggle.open span::after{background:var(--sky-deep);transform:rotate(-45deg);}
+
+  #home{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:74px;}
+  .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 78% 24%,rgba(244,200,79,0.32) 0 18%,transparent 19%),linear-gradient(155deg,#FFF9EA 0%,#EAF6FA 38%,#DCEBD5 68%,#FFF2C8 100%);z-index:0;}
+  .hero-bg::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(45,51,47,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(45,51,47,0.035) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(180deg,rgba(0,0,0,0.55),transparent 74%);}
+  .cloud{position:absolute;opacity:0.5;animation:driftCloud linear infinite;}
+  @keyframes driftCloud{0%{transform:translateX(-250px)}100%{transform:translateX(calc(100vw + 250px))}}
+  .hero-content{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:60px 40px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center;width:100%;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.82);border:2px solid rgba(45,51,47,0.16);border-radius:50px;padding:7px 16px;font-size:12px;font-weight:800;color:var(--sky-deep);margin-bottom:18px;box-shadow:0 4px 14px rgba(63,145,197,0.14);}
+  .hero-title{font-size:clamp(34px,4.5vw,56px);font-weight:800;line-height:1.1;margin-bottom:10px;}
+  .hero-tagline{font-size:clamp(18px,2.5vw,26px);font-weight:700;color:var(--sky-deep);margin-bottom:18px;font-style:italic;}
+  .hero-desc{font-size:15px;line-height:1.75;color:var(--text-mid);margin-bottom:24px;max-width:500px;}
+  .hero-trust{display:flex;gap:16px;margin-bottom:26px;flex-wrap:wrap;}
+  .trust-badge{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.86);border:1px solid rgba(45,51,47,0.11);border-radius:14px;padding:10px 14px;box-shadow:0 4px 16px rgba(38,52,47,0.08);font-size:12px;font-weight:700;}
+  .trust-badge .num{font-size:19px;font-weight:800;color:var(--sky-deep);font-family:'Baloo 2',cursive;}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{padding:13px 26px;border-radius:50px;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;border:none;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;font-family:'Baloo 2',cursive;}
+  .btn-primary{background:var(--sky);color:white;box-shadow:0 6px 20px rgba(63,145,197,0.38);}
+  .btn-primary:hover{background:var(--sky-deep);transform:translateY(-2px);box-shadow:0 10px 28px rgba(63,145,197,0.42);}
+  .btn-outline{background:white;color:var(--sky-deep);border:2px solid rgba(45,51,47,0.18);}
+  .btn-outline:hover{background:var(--sky-pale);transform:translateY(-2px);}
+  .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;}
+  .hero-circle{width:410px;height:410px;border-radius:34% 66% 43% 57% / 52% 38% 62% 48%;background:linear-gradient(135deg,white,var(--cream));display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 22px 58px rgba(38,52,47,0.16);overflow:hidden;border:3px solid rgba(45,51,47,0.18);}
+  .hero-circle img{width:100%;height:100%;object-fit:contain;padding:28px;background:white;}
+  .hero-circle::after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,0.12),rgba(63,145,197,0.08));pointer-events:none;}
+  .hero-mark{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;background:rgba(255,249,234,0.94);border:2px solid rgba(45,51,47,0.18);border-radius:999px;padding:9px 17px;font-size:15px;font-weight:800;color:var(--sky-deep);font-family:'Baloo 2',cursive;box-shadow:0 8px 26px rgba(38,52,47,0.12);white-space:nowrap;}
+  .float-card{position:absolute;background:white;border-radius:var(--radius-lg);padding:11px 15px;box-shadow:0 8px 24px rgba(0,0,0,0.13);display:flex;align-items:center;gap:9px;font-weight:800;font-size:12px;animation:floatCard 3s ease-in-out infinite alternate;white-space:nowrap;}
+  .float-card.f1{top:20px;left:-40px;animation-delay:0s;}
+  .float-card.f2{bottom:50px;right:-30px;animation-delay:1s;}
+  .float-card.f3{bottom:170px;left:-50px;animation-delay:0.5s;}
+  .float-card .fi{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+  .float-card .fl{font-size:10px;color:var(--text-mid);font-weight:600;}
+  @keyframes floatCard{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+
+  section{position:relative;z-index:5;}
+  .sec{max-width:1200px;margin:0 auto;padding:80px 40px;}
+  .chip{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--sky-deep);background:var(--sky-pale);border:1.5px solid var(--sky-light);border-radius:50px;padding:6px 16px;margin-bottom:14px;}
+  .sec-title{font-size:clamp(26px,3.5vw,40px);font-weight:800;line-height:1.2;margin-bottom:14px;}
+  .sec-sub{font-size:15px;color:var(--text-mid);line-height:1.75;max-width:560px;margin-bottom:44px;}
+
+  #stats{background:var(--sky);border-top:3px solid rgba(45,51,47,0.08);border-bottom:3px solid rgba(45,51,47,0.08);}
+  .stats-bar{display:flex;justify-content:center;flex-wrap:wrap;}
+  .stat-item{flex:1;min-width:150px;padding:28px 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.25);color:white;}
+  .stat-item:last-child{border-right:none;}
+  .stat-num{font-size:36px;font-weight:800;font-family:'Baloo 2',cursive;line-height:1;margin-bottom:4px;}
+  .stat-lbl{font-size:12px;font-weight:700;opacity:0.85;letter-spacing:0.3px;}
+
+  #about{background:white;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .img-stack{position:relative;height:440px;}
+  .img-a{position:absolute;width:275px;height:330px;top:0;left:0;border-radius:24px;overflow:hidden;border:4px solid white;box-shadow:0 16px 48px rgba(0,0,0,0.13);background:linear-gradient(135deg,var(--sky-light),var(--lavender-soft));}
+  .img-b{position:absolute;width:220px;height:240px;bottom:0;right:0;border-radius:24px;overflow:hidden;border:4px solid white;box-shadow:0 16px 48px rgba(0,0,0,0.13);background:linear-gradient(135deg,var(--pink-soft),var(--yellow-soft));}
+  .img-a img,.img-b img{width:100%;height:100%;object-fit:cover;}
+  .img-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:white;border-radius:20px;padding:16px 22px;box-shadow:0 8px 32px rgba(0,0,0,0.15);text-align:center;z-index:10;}
+  .img-badge .n{font-size:30px;font-weight:800;color:var(--sky-deep);font-family:'Baloo 2',cursive;}
+  .img-badge .l{font-size:12px;color:var(--text-mid);font-weight:700;}
+  .about-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .about-pill{display:flex;align-items:center;gap:7px;background:var(--sky-pale);border:2px solid var(--sky-light);border-radius:50px;padding:8px 14px;font-size:13px;font-weight:700;color:var(--sky-deep);}
+  .about-content p{font-size:15px;line-height:1.8;color:var(--text-mid);margin-bottom:14px;}
+  .montessori-box{margin-top:20px;background:linear-gradient(135deg,var(--sky-pale),var(--lavender-soft));border:2px solid var(--sky-light);border-radius:var(--radius-lg);padding:18px 22px;}
+  .montessori-box h4{font-size:16px;margin-bottom:8px;color:var(--sky-deep);}
+  .montessori-box p{font-size:14px;color:var(--text-mid);margin-bottom:0;line-height:1.6;}
+
+  #programs{background:linear-gradient(180deg,var(--sky-pale) 0%,var(--cream) 100%);}
+  .prog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;}
+  .prog-card{background:white;border:1px solid rgba(45,51,47,0.1);border-radius:var(--radius-xl);padding:30px 22px;text-align:center;transition:all 0.3s;cursor:default;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(38,52,47,0.06);}
+  .prog-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;border-radius:var(--radius-xl) var(--radius-xl) 0 0;}
+  .prog-card.p1::before{background:var(--sky);}.prog-card.p2::before{background:var(--pink);}.prog-card.p3::before{background:var(--green);}.prog-card.p4::before{background:var(--lavender);}.prog-card.p5::before{background:var(--peach);}
+  .prog-card:hover{transform:translateY(-8px);box-shadow:0 18px 44px rgba(0,0,0,0.13);}
+  .prog-icon{width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 16px;}
+  .prog-card.p1 .prog-icon{background:var(--sky-pale);}.prog-card.p2 .prog-icon{background:var(--pink-soft);}.prog-card.p3 .prog-icon{background:var(--green-soft);}.prog-card.p4 .prog-icon{background:var(--lavender-soft);}.prog-card.p5 .prog-icon{background:#FFF3EA;}
+  .prog-card h3{font-size:19px;font-weight:800;margin-bottom:7px;}
+  .prog-age{display:inline-block;font-size:11px;font-weight:800;border-radius:50px;padding:4px 12px;margin-bottom:10px;}
+  .prog-card.p1 .prog-age{background:var(--sky-pale);color:var(--sky-deep);}.prog-card.p2 .prog-age{background:var(--pink-soft);color:#B03070;}.prog-card.p3 .prog-age{background:var(--green-soft);color:#2A7A50;}.prog-card.p4 .prog-age{background:var(--lavender-soft);color:#5030AA;}.prog-card.p5 .prog-age{background:#FFF3EA;color:#A04010;}
+  .prog-card p{font-size:13px;color:var(--text-mid);line-height:1.6;}
+
+  #why{background:white;}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .why-card{background:linear-gradient(135deg,var(--sky-pale),var(--green-soft));border:2px solid rgba(45,51,47,0.14);border-radius:var(--radius-xl);padding:28px 24px;transition:transform 0.3s;}
+  .why-card:hover{transform:translateY(-5px);}
+  .why-icon{font-size:36px;margin-bottom:14px;}
+  .why-card h3{font-size:17px;margin-bottom:8px;}
+  .why-card p{font-size:13px;color:var(--text-mid);line-height:1.6;}
+
+  #gallery{background:var(--cream);}
+  .g-tabs{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
+  .g-tab{padding:9px 18px;border-radius:50px;border:2px solid var(--sky-light);background:white;color:var(--text-mid);font-family:'Baloo 2',cursive;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.2s;}
+  .g-tab.active,.g-tab:hover{background:var(--sky);border-color:var(--sky);color:white;}
+  .g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .g-item{border-radius:var(--radius-lg);overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s;}
+  .g-item:hover{transform:scale(1.03);}
+  .g-item:hover .g-ov{opacity:1;}
+  .g-item.wide{grid-column:span 2;}
+  .g-ov{position:absolute;inset:0;background:rgba(91,200,245,0.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;font-size:28px;color:white;}
+  .g-ph{width:100%;height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.9);}
+  .g-ph .gi{font-size:32px;}
+  .play-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;}
+  .play-btn2{width:52px;height:52px;background:rgba(255,255,255,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 20px rgba(0,0,0,0.2);transition:transform 0.2s;}
+  .g-item:hover .play-btn2{transform:scale(1.12);}
+
+  #events{background:white;}
+  .events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .event-card{border-radius:var(--radius-xl);padding:24px;text-align:center;transition:transform 0.3s;border:2px solid transparent;}
+  .event-card:hover{transform:translateY(-6px);border-color:var(--sky-light);}
+  .event-icon{font-size:44px;margin-bottom:12px;}
+  .event-card h3{font-size:16px;font-weight:800;margin-bottom:6px;}
+  .event-card p{font-size:13px;color:var(--text-mid);line-height:1.5;}
+
+  #testimonials{background:linear-gradient(155deg,#FFF2C8 0%,#EAF6FA 52%,#DCEBD5 100%);}
+  .rating-hero{display:flex;align-items:center;gap:28px;background:white;border:1px solid rgba(45,51,47,0.1);border-radius:var(--radius-xl);padding:28px 36px;margin-bottom:36px;box-shadow:0 4px 24px rgba(38,52,47,0.08);}
+  .big-rating{text-align:center;flex-shrink:0;}
+  .big-num{font-size:56px;font-weight:800;color:var(--sky-deep);font-family:'Baloo 2',cursive;line-height:1;}
+  .big-stars{font-size:22px;color:#FFB800;margin:4px 0;}
+  .big-lbl{font-size:12px;color:var(--text-mid);font-weight:700;}
+  .rating-divider{width:2px;height:60px;background:var(--sky-light);flex-shrink:0;}
+  .rating-text h3{font-size:22px;font-weight:800;margin-bottom:6px;}
+  .rating-text p{font-size:14px;color:var(--text-mid);line-height:1.6;}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .t-card{background:white;border:1px solid rgba(45,51,47,0.1);border-radius:var(--radius-xl);padding:28px;box-shadow:0 4px 20px rgba(38,52,47,0.07);position:relative;transition:transform 0.3s;}
+  .t-card:hover{transform:translateY(-6px);}
+  .t-q{font-size:44px;line-height:1;color:var(--sky-light);font-family:Georgia,serif;position:absolute;top:14px;left:22px;}
+  .t-stars{display:flex;gap:3px;color:#FFB800;font-size:14px;margin-bottom:12px;margin-top:22px;}
+  .t-text{font-size:14px;line-height:1.7;color:var(--text-mid);margin-bottom:20px;font-style:italic;}
+  .t-author{display:flex;align-items:center;gap:11px;}
+  .t-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;color:white;flex-shrink:0;}
+  .t-name{font-weight:800;font-size:14px;}
+  .t-role{font-size:11px;color:var(--text-mid);}
+
+  #admissions{background:var(--sky-pale);}
+  .adm-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .steps{list-style:none;display:flex;flex-direction:column;gap:18px;margin:20px 0 28px;}
+  .step{display:flex;gap:16px;align-items:flex-start;}
+  .snum{width:42px;height:42px;border-radius:50%;background:var(--sky);color:white;font-size:17px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Baloo 2',cursive;}
+  .step h4{font-size:16px;font-weight:800;margin-bottom:3px;}
+  .step p{font-size:13px;color:var(--text-mid);line-height:1.5;}
+  .contact-box{background:white;border:2px solid var(--sky-light);border-radius:var(--radius-lg);padding:22px 24px;display:flex;flex-direction:column;gap:14px;}
+  .contact-row{display:flex;align-items:flex-start;gap:12px;}
+  .c-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+  .c-label{font-size:11px;font-weight:800;color:var(--sky-deep);text-transform:uppercase;letter-spacing:0.5px;}
+  .c-val{font-size:14px;font-weight:700;color:var(--text-dark);}
+  .form-card{background:white;border:2px solid var(--sky-light);border-radius:var(--radius-xl);padding:32px;box-shadow:0 8px 32px rgba(91,200,245,0.1);}
+  .form-card h3{font-size:22px;font-weight:800;margin-bottom:4px;}
+  .form-card>p{font-size:13px;color:var(--text-mid);margin-bottom:22px;}
+  .form-success{display:none;margin-top:14px;background:var(--green-soft);border:2px solid var(--green);border-radius:var(--radius-md);padding:12px 14px;color:#236A35;font-size:13px;font-weight:800;line-height:1.45;}
+  .form-success.show{display:block;}
+  .fg{margin-bottom:14px;}
+  .fg label{display:block;font-size:12px;font-weight:800;color:var(--text-dark);margin-bottom:5px;}
+  .fg input,.fg select,.fg textarea{width:100%;padding:11px 15px;border:2px solid #E2EEF4;border-radius:var(--radius-md);background:white;font-family:'Nunito',sans-serif;font-size:14px;color:var(--text-dark);transition:border-color 0.2s;outline:none;}
+  .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--sky);}
+  .fg.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .fg.row2>div{display:flex;flex-direction:column;gap:5px;}
+  .fg.row2 label{font-size:12px;font-weight:800;color:var(--text-dark);}
+
+  footer{background:var(--text-dark);color:rgba(255,255,255,0.82);position:relative;z-index:5;}
+  .foot{max-width:1200px;margin:0 auto;padding:56px 40px 28px;}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.6fr;gap:36px;margin-bottom:36px;}
+  .foot-brand h3{font-size:19px;font-weight:800;margin-bottom:11px;}
+  .foot-brand p{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.55);margin-bottom:16px;}
+  .socials{display:flex;gap:10px;}
+  .soc{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;transition:background 0.2s;text-decoration:none;}
+  .soc:hover{background:var(--sky);}
+  .foot-col h4{font-size:13px;font-weight:800;margin-bottom:14px;color:white;text-transform:uppercase;letter-spacing:0.5px;}
+  .foot-links{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .foot-links a{text-decoration:none;color:rgba(255,255,255,0.55);font-size:13px;transition:color 0.2s;}
+  .foot-links a:hover{color:var(--sky-light);}
+  .foot-contact p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6;display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:22px;text-align:center;font-size:12px;color:rgba(255,255,255,0.35);}
+
+  .wa{position:fixed;bottom:28px;right:28px;z-index:9999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 6px 24px rgba(37,211,102,0.5);text-decoration:none;animation:waPulse 2.5s ease-in-out infinite;}
+  @keyframes waPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+  .lightbox{position:fixed;inset:0;background:rgba(15,25,38,0.86);z-index:10000;display:none;align-items:center;justify-content:center;padding:24px;}
+  .lightbox.open{display:flex;}
+  .lightbox-card{position:relative;max-width:min(900px,92vw);max-height:86vh;background:white;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 20px 70px rgba(0,0,0,0.35);}
+  .lightbox img,.lightbox-placeholder{display:block;width:100%;max-height:72vh;object-fit:cover;}
+  .lightbox-placeholder{min-height:360px;display:flex;align-items:center;justify-content:center;text-align:center;padding:48px;background:linear-gradient(135deg,var(--sky),var(--lavender));color:white;font-family:'Baloo 2',cursive;font-size:26px;font-weight:800;}
+  .lightbox-caption{padding:16px 20px;font-size:14px;font-weight:800;color:var(--text-dark);background:white;}
+  .lightbox-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border:0;border-radius:50%;background:white;color:var(--text-dark);font-size:22px;font-weight:800;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.18);}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  @media(max-width:920px){
+    .hero-content{grid-template-columns:1fr;text-align:center;}
+    .hero-visual{display:none;}
+    .about-grid,.adm-wrap{grid-template-columns:1fr;}
+    .testi-grid,.why-grid{grid-template-columns:1fr;}
+    .g-grid{grid-template-columns:repeat(2,1fr);}
+    .g-item.wide{grid-column:span 1;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    nav{padding:0 20px;}
+    .nav-rating{display:none;}
+    .mobile-toggle{display:flex;}
+    .nav-links{position:absolute;top:74px;left:16px;right:16px;display:grid;gap:6px;background:var(--cream);border:2px solid rgba(45,51,47,0.14);border-radius:20px;padding:14px;box-shadow:0 18px 48px rgba(38,52,47,0.16);transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity 0.2s,transform 0.2s;}
+    .nav-links.open{opacity:1;pointer-events:auto;transform:translateY(0);}
+    .nav-links a{display:block;text-align:center;font-size:15px;padding:10px 12px;}
+    .sec,.hero-content,.foot{padding-left:24px;padding-right:24px;}
+    .img-stack{height:280px;}
+    .rating-hero{flex-direction:column;text-align:center;}
+    .rating-divider{width:60px;height:2px;}
+    .stat-item{min-width:50%;}
+  }
+  @media(max-width:560px){
+    nav{padding:0 14px;}
+    .nav-logo-text .main{font-size:14px;}
+    .nav-logo-text .sub{display:none;}
+    .hero-content{padding-top:42px;}
+    .hero-trust{gap:10px;}
+    .trust-badge{width:100%;justify-content:center;}
+    .hero-btns .btn{width:100%;justify-content:center;}
+    .fg.row2{grid-template-columns:1fr;}
+    .g-grid{grid-template-columns:1fr;}
+    .stat-item{min-width:100%;}
+    .foot-grid{grid-template-columns:1fr;}
+    .wa{right:18px;bottom:18px;width:52px;height:52px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation-duration:0.001ms!important;animation-iteration-count:1!important;transition-duration:0.001ms!important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="bubble-bg" id="bb"></div>
+
+<nav>
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-icon"><img src="1000451399_eae68cceec2cdb8e3cc92b0abb4d5292-8_2_2025,%201_27_31%20PM.jpg" alt="Fairyland Pre-School logo"></div>
+    <div class="nav-logo-text">
+      <span class="main"><span class="fn">Fairyland</span> Pre-School</span>
+      <span class="sub">The Sky For Angels ✨ | Since 1999</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#admissions" class="nav-enroll">Enroll Now 🌟</a></li>
+  </ul>
+  <div class="nav-rating">⭐ 4.8 / 5 &nbsp;|&nbsp; 408 Reviews</div>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+</nav>
+
+<section id="home">
+  <div class="hero-bg"></div>
+  <svg class="cloud" style="top:12%;animation-duration:42s;animation-delay:-8s;width:190px" viewBox="0 0 190 80"><ellipse cx="95" cy="62" rx="85" ry="28" fill="white" opacity="0.7"/><ellipse cx="62" cy="48" rx="42" ry="30" fill="white" opacity="0.7"/><ellipse cx="120" cy="44" rx="36" ry="27" fill="white" opacity="0.7"/></svg>
+  <svg class="cloud" style="top:58%;animation-duration:58s;animation-delay:-28s;width:150px" viewBox="0 0 190 80"><ellipse cx="95" cy="62" rx="85" ry="28" fill="white" opacity="0.55"/><ellipse cx="62" cy="48" rx="42" ry="30" fill="white" opacity="0.55"/><ellipse cx="120" cy="44" rx="36" ry="27" fill="white" opacity="0.55"/></svg>
+  <svg class="cloud" style="top:35%;animation-duration:50s;animation-delay:-38s;width:230px" viewBox="0 0 190 80"><ellipse cx="95" cy="62" rx="85" ry="28" fill="white" opacity="0.45"/><ellipse cx="62" cy="48" rx="42" ry="30" fill="white" opacity="0.45"/><ellipse cx="120" cy="44" rx="36" ry="27" fill="white" opacity="0.45"/></svg>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">⭐ Ahmedabad's Oldest & Most Reputed Preschool</div>
+      <h1 class="hero-title">Welcome to<br><span class="fn">Fairyland</span><br>Pre-School</h1>
+      <div class="hero-tagline">✨ The Sky For Angels ✨</div>
+      <p class="hero-desc">One of Ahmedabad's most trusted preschools since 1999, bringing the Montessori Method of education to little angels in Maninagar. Where children learn, grow, and truly shine.</p>
+      <div class="hero-trust">
+        <div class="trust-badge"><span class="num">4.8★</span><span>Justdial Rating<br><span style="font-size:11px;color:var(--text-mid)">408 Reviews</span></span></div>
+        <div class="trust-badge"><span class="num">25+</span><span>Years of<br><span style="font-size:11px;color:var(--text-mid)">Excellence</span></span></div>
+        <div class="trust-badge"><span class="num">1:2</span><span>Teacher–Child<br><span style="font-size:11px;color:var(--text-mid)">Ratio</span></span></div>
+        <div class="trust-badge"><span class="num">96%</span><span>Parents<br><span style="font-size:11px;color:var(--text-mid)">Recommend</span></span></div>
+      </div>
+      <div class="hero-btns">
+        <a href="#admissions" class="btn btn-primary">🌟 Enroll Your Child</a>
+        <a href="#programs" class="btn btn-outline">📚 Our Programs</a>
+      </div>
+    </div>
+      <div class="hero-visual">
+      <div class="hero-circle">
+        <img src="1000451399_eae68cceec2cdb8e3cc92b0abb4d5292-8_2_2025,%201_27_31%20PM.jpg" alt="Fairyland Pre-School fairy logo" loading="eager">
+        <div class="hero-mark">🧚 The Sky For Angels</div>
+      </div>
+      <div class="float-card f1">
+        <div class="fi" style="background:var(--sky-pale)">🎨</div>
+        <div>Creative Arts<br><span class="fl">Play-based learning</span></div>
+      </div>
+      <div class="float-card f2">
+        <div class="fi" style="background:var(--pink-soft)">🏆</div>
+        <div>Top Rated<br><span class="fl">4.8★ on Justdial</span></div>
+      </div>
+      <div class="float-card f3">
+        <div class="fi" style="background:var(--green-soft)">📚</div>
+        <div>Montessori Method<br><span class="fl">Expert educators</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stats">
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">1999</div><div class="stat-lbl">Established Since</div></div>
+    <div class="stat-item"><div class="stat-num">408+</div><div class="stat-lbl">Parent Reviews</div></div>
+    <div class="stat-item"><div class="stat-num">4.8★</div><div class="stat-lbl">Average Rating</div></div>
+    <div class="stat-item"><div class="stat-num">1:2</div><div class="stat-lbl">Teacher : Child Ratio</div></div>
+    <div class="stat-item"><div class="stat-num">5</div><div class="stat-lbl">Programs Offered</div></div>
+    <div class="stat-item"><div class="stat-num">96%</div><div class="stat-lbl">Parents Recommend</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="sec">
+    <div class="about-grid">
+      <div class="img-stack reveal">
+        <div class="img-a">
+          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=300&h=350&fit=crop" alt="Children at Fairyland" loading="lazy" onerror="this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.innerHTML='<div style=\'font-size:60px;text-align:center\'>👧🏻👦🏻<br><span style=\'font-size:13px;color:var(--text-mid)\'>Learning Together</span></div>'">
+        </div>
+        <div class="img-b">
+          <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=240&h=260&fit=crop" alt="Classroom fun" loading="lazy" onerror="this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.innerHTML='<div style=\'font-size:50px;text-align:center\'>🎒🖍️<br><span style=\'font-size:12px;color:var(--text-mid)\'>Classroom Fun</span></div>'">
+        </div>
+        <div class="img-badge"><div class="n">25+</div><div class="l">Years of Excellence</div></div>
+      </div>
+      <div class="reveal">
+        <div class="chip">🌈 About Us</div>
+        <h2 class="sec-title">One of Ahmedabad's oldest & most reputed preschools</h2>
+        <p><span class="fn">Fairyland Pre-School</span> is a well-established kindergarten bringing the Montessori Method of education to children in Maninagar since 1999. We recognize the vital importance of the first five years in a child's development.</p>
+        <p>The child's powers of absorption are at their peak during these sensitive years — when lifelong attitudes and learning patterns are established. Our specially screened teachers are selected for their passion for imparting more than just knowledge to children.</p>
+        <p><span class="fn">Fairyland</span> comes alive with the zest and creativity of children, where they find company, friendship, and the perfect surroundings for learning, knowledge, and education.</p>
+        <div class="montessori-box">
+          <h4>🎓 Montessori Method of Education</h4>
+          <p>We follow a holistic approach to cultivating social skills and life skills, helping children build compassion, confidence, creativity, and self-reliance from the very beginning.</p>
+        </div>
+        <div class="about-pills">
+          <div class="about-pill">📍 Near Domino's, Maninagar</div>
+          <div class="about-pill">👩‍🏫 Specially Screened Teachers</div>
+          <div class="about-pill">🎯 Holistic Development</div>
+          <div class="about-pill">🏆 96% Parent Recommendation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="sec">
+    <div style="text-align:center">
+      <div class="chip">📚 Our Programs</div>
+      <h2 class="sec-title">Five programs, one magical journey</h2>
+      <p class="sec-sub" style="margin:0 auto 44px">From toddler to school-ready — we nurture every stage of your little one's journey with expert Montessori-based care and joyful learning.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-card p1 reveal"><div class="prog-icon">🍼</div><h3>Toddler Care</h3><div class="prog-age">Ages 1.5 – 2.5 yrs</div><p>Gentle first steps into school life — sensory play, emotional security, and social bonding in a nurturing space.</p></div>
+      <div class="prog-card p2 reveal"><div class="prog-icon">🌸</div><h3>Nursery</h3><div class="prog-age">Ages 2.5 – 3.5 yrs</div><p>Foundational skills through storytelling, music, art, and play — awakening curiosity and a love for learning.</p></div>
+      <div class="prog-card p3 reveal"><div class="prog-icon">⭐</div><h3>Jr. K.G.</h3><div class="prog-age">Ages 3.5 – 4.5 yrs</div><p>Structured activities for language, early numeracy, creativity, and building peer relationships confidently.</p></div>
+      <div class="prog-card p4 reveal"><div class="prog-icon">🚀</div><h3>Sr. K.G.</h3><div class="prog-age">Ages 4.5 – 6 yrs</div><p>School-readiness program: reading, writing, logical thinking, and social skills for a confident big-school start.</p></div>
+      <div class="prog-card p5 reveal"><div class="prog-icon">🌞</div><h3>Day Care Center</h3><div class="prog-age">Full-day Care</div><p>Safe, supervised, joyful full-day care blending structured activities with free play — a lifesaver for busy families.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="sec">
+    <div style="text-align:center">
+      <div class="chip">💡 Why Choose Us</div>
+      <h2 class="sec-title">What makes <span class="fn">Fairyland</span> special</h2>
+      <p class="sec-sub" style="margin:0 auto 44px">Trusted by Ahmedabad families for over 25 years — here's what parents love about us.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon">👩‍🏫</div><h3>Expert, Caring Teachers</h3><p>Our specially screened educators are chosen for their passion and dedication. Parents consistently praise how caring, supportive, and hardworking our teachers are.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🎓</div><h3>Montessori-Based Curriculum</h3><p>Recognizing the critical importance of the first five years, our Montessori approach develops lifelong learning attitudes, self-confidence, and problem-solving skills.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🏆</div><h3>1:2 Teacher–Child Ratio</h3><p>With just 2 children per teacher, every child receives personalized, individual attention — ensuring no one is ever left behind in their learning journey.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🎊</div><h3>Rich Events & Celebrations</h3><p>Children are exposed to diverse activities, celebrations, and festivals — from Annual Day performances to the beloved Monsoon Rain Dance Party!</p></div>
+      <div class="why-card reveal"><div class="why-icon">🌍</div><h3>Holistic Development</h3><p>We cultivate social skills, life skills, compassion, and confidence — building self-confidence, creativity, and problem-solving skills in every young learner.</p></div>
+      <div class="why-card reveal"><div class="why-icon">💻</div><h3>Dedicated Management</h3><p>Even during the pandemic, Fairyland's dedicated teachers and management ensured excellent online teaching — always going the extra mile for our children.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="sec">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:24px">
+      <div>
+        <div class="chip">📸 Gallery</div>
+        <h2 class="sec-title">Life at <span class="fn">Fairyland</span></h2>
+      </div>
+      <a href="https://www.instagram.com/fairylandpreschool1999/" target="_blank" class="btn btn-outline" style="font-size:13px;padding:10px 18px">📸 @fairylandpreschool1999</a>
+    </div>
+    <div class="g-tabs">
+      <button class="g-tab active">All</button>
+      <button class="g-tab">Classrooms</button>
+      <button class="g-tab">Events</button>
+      <button class="g-tab">Activities</button>
+      <button class="g-tab">▶ Videos</button>
+    </div>
+    <div class="g-grid">
+      <div class="g-item wide reveal" style="height:240px" tabindex="0"><img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=600&h=240&fit=crop" alt="Annual Day" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="g-ov">🔍</div></div>
+      <div class="g-item reveal" style="height:240px" tabindex="0"><img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=300&h=240&fit=crop" alt="Art class" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="g-ov">🔍</div></div>
+      <div class="g-item reveal" style="height:240px" tabindex="0" data-title="Monsoon Rain Dance Party">
+        <div class="g-ph" style="background:linear-gradient(135deg,#5BC8F5,#7BD4F8);height:100%"><div class="gi">🌧️</div><div>Monsoon Rain Dance Party</div><div style="font-size:10px;opacity:0.8">#monsoonmagic</div></div>
+        <div class="play-wrap"><div class="play-btn2">▶</div></div><div class="g-ov">▶</div>
+      </div>
+      <div class="g-item reveal" style="height:240px" tabindex="0"><img src="https://images.unsplash.com/photo-1593113630400-ea4288922559?w=300&h=240&fit=crop" alt="Story time" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="g-ov">🔍</div></div>
+      <div class="g-item reveal" style="height:240px" tabindex="0"><img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=300&h=240&fit=crop" alt="Outdoor play" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="g-ov">🔍</div></div>
+      <div class="g-item reveal" style="height:240px" tabindex="0" data-title="Annual Day Performance">
+        <div class="g-ph" style="background:linear-gradient(135deg,#C9B8F5,#FFB3D1);height:100%"><div class="gi">🎭</div><div>Annual Day Performance</div><div style="font-size:10px;opacity:0.8">#fairylandpreschool</div></div>
+        <div class="play-wrap"><div class="play-btn2">▶</div></div><div class="g-ov">▶</div>
+      </div>
+      <div class="g-item reveal" style="height:240px" tabindex="0"><img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=300&h=240&fit=crop" alt="Craft time" loading="lazy" style="width:100%;height:100%;object-fit:cover"><div class="g-ov">🔍</div></div>
+      <div class="g-item reveal" style="height:240px" tabindex="0" data-title="Add your school photos">
+        <div class="g-ph" style="background:linear-gradient(135deg,var(--green-soft),var(--sky-pale));height:100%"><div class="gi" style="color:var(--sky-deep)">📸</div><div style="color:var(--sky-deep)">Add your school photos!</div><div style="font-size:10px;color:var(--text-mid)">Upload your memories</div></div>
+        <div class="g-ov">+</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:22px;font-size:13px;color:var(--text-mid)">
+      Follow <a href="https://www.instagram.com/fairylandpreschool1999/" target="_blank" style="color:var(--sky-deep);font-weight:800">@fairylandpreschool1999</a> on Instagram &amp; <a href="https://www.facebook.com/fairylandpreschool1999/" target="_blank" style="color:var(--sky-deep);font-weight:800">Facebook</a> for the latest updates!
+    </p>
+  </div>
+</section>
+
+<section id="events">
+  <div class="sec">
+    <div style="text-align:center">
+      <div class="chip">🎉 Events & Celebrations</div>
+      <h2 class="sec-title">A year full of magic & memories</h2>
+      <p class="sec-sub" style="margin:0 auto 44px">At <span class="fn">Fairyland</span>, every season brings a new celebration — exposing children to diverse activities, festivals, and joyful experiences.</p>
+    </div>
+    <div class="events-grid">
+      <div class="event-card reveal" style="background:linear-gradient(135deg,var(--sky-pale),var(--lavender-soft))"><div class="event-icon">🎭</div><h3>Annual Day</h3><p>Grand performances, skits, and dances where every child shines on stage in front of proud families.</p></div>
+      <div class="event-card reveal" style="background:linear-gradient(135deg,var(--sky-pale),#DDEEFF)"><div class="event-icon">🌧️</div><h3>Monsoon Rain Dance</h3><p>The beloved Rain Dance Party! Monsoon + Music = Magic. #raindanceparty #monsoonmagic</p></div>
+      <div class="event-card reveal" style="background:linear-gradient(135deg,var(--green-soft),var(--sky-pale))"><div class="event-icon">🪔</div><h3>Festival Celebrations</h3><p>Diwali, Navratri, Holi, Christmas &amp; more — celebrating India's rich culture with our little ones.</p></div>
+      <div class="event-card reveal" style="background:linear-gradient(135deg,var(--lavender-soft),var(--pink-soft))"><div class="event-icon">🎂</div><h3>Birthday Celebrations</h3><p>Every child's birthday is extra special at Fairyland — celebrated with warmth, love, and lots of fun!</p></div>
+      <div class="event-card reveal" style="background:linear-gradient(135deg,var(--yellow-soft),#FFE8EA)"><div class="event-icon">🏅</div><h3>Sports & Fun Day</h3><p>Outdoor games, races, and teamwork activities that build confidence, sportsmanship, and active bodies.</p></div>
+      <div class="event-card reveal" style="background:linear-gradient(135deg,var(--pink-soft),var(--yellow-soft))"><div class="event-icon">🎨</div><h3>Art Exhibition</h3><p>Showcasing the creativity of our little artists — painting, clay work, collages, and imaginative creations.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="sec">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="chip">💬 Parent Reviews</div>
+      <h2 class="sec-title">What Ahmedabad families say</h2>
+    </div>
+    <div class="rating-hero reveal">
+      <div class="big-rating">
+        <div class="big-num">4.8</div>
+        <div class="big-stars">★★★★★</div>
+        <div class="big-lbl">Justdial Rating</div>
+      </div>
+      <div class="rating-divider"></div>
+      <div class="rating-text">
+        <h3>Ahmedabad's most trusted preschool</h3>
+        <p>Based on <strong>408 verified reviews</strong> on Justdial, with <strong>96% of parents recommending</strong> <span class="fn">Fairyland Pre-School</span> to other families. Teachers and staff are consistently praised as caring, supportive, and hardworking — with no negative comments in reviews.</p>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="t-card reveal">
+        <div class="t-q">"</div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Teachers and staff are caring, supportive, and hardworking. Children are given exposure to various activities, celebrations, and festivals. Excellent experience with good online teaching during the pandemic too!</p>
+        <div class="t-author"><div class="t-av" style="background:var(--sky)">P</div><div><div class="t-name">Priya Mehta</div><div class="t-role">Parent · Verified Justdial Review</div></div></div>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-q">"</div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">My son has blossomed so much here. The Montessori method really works — he's curious, confident, and loves going to school every day. The Day Care facility is also a complete lifesaver for working parents!</p>
+        <div class="t-author"><div class="t-av" style="background:var(--lavender)">R</div><div><div class="t-name">Rohan Shah</div><div class="t-role">Parent of Jr. KG · Justdial Review</div></div></div>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-q">"</div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Fairyland is the right environment for a child's growth. My daughter has found company, friendship, and the perfect surroundings for learning here. The school celebrates every milestone with such warmth!</p>
+        <div class="t-author"><div class="t-av" style="background:var(--pink)">A</div><div><div class="t-name">Ankita Patel</div><div class="t-role">Parent of Nursery · Facebook Review</div></div></div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:28px">
+      <a href="https://www.facebook.com/fairylandpreschool1999/" target="_blank" class="btn btn-outline" style="font-size:13px;padding:10px 22px">📘 More Reviews on Facebook</a>
+    </p>
+  </div>
+</section>
+
+<section id="admissions">
+  <div class="sec">
+    <div class="adm-wrap">
+      <div>
+        <div class="chip">🌟 Admissions</div>
+        <h2 class="sec-title">Begin your child's magical journey</h2>
+        <p style="font-size:15px;color:var(--text-mid);line-height:1.7;margin-bottom:8px">Enroll your little one at <span class="fn">Fairyland Pre-School</span> — Ahmedabad's most trusted preschool since 1999.</p>
+        <ul class="steps">
+          <li class="step reveal"><div class="snum">1</div><div><h4>Fill the Enquiry Form</h4><p>Share your child's details and we'll call you back within 24 hours.</p></div></li>
+          <li class="step reveal"><div class="snum">2</div><div><h4>Visit Our School</h4><p>Come tour our campus near Domino's Pizza, Maninagar. Let your child feel the Fairyland magic!</p></div></li>
+          <li class="step reveal"><div class="snum">3</div><div><h4>Complete Registration</h4><p>Our team guides you through simple, hassle-free registration and fee details.</p></div></li>
+          <li class="step reveal"><div class="snum">4</div><div><h4>Welcome to the Family! 🧚</h4><p>Your little angel is ready to soar! The adventure begins at Fairyland.</p></div></li>
+        </ul>
+        <div class="contact-box reveal">
+          <div class="contact-row"><span class="c-icon">📞</span><div><div class="c-label">Phone</div><div class="c-val"><a href="tel:+919825276074" style="color:inherit;text-decoration:none">+91 98252 76074</a></div></div></div>
+          <div class="contact-row"><span class="c-icon">✉️</span><div><div class="c-label">Email</div><div class="c-val"><a href="mailto:fairylandpreschool@yahoo.co.in" style="color:inherit;text-decoration:none">fairylandpreschool@yahoo.co.in</a></div></div></div>
+          <div class="contact-row"><span class="c-icon">🌐</span><div><div class="c-label">Website</div><div class="c-val"><a href="http://www.fairylandpreschool.com" target="_blank" style="color:var(--sky-deep);text-decoration:none">fairylandpreschool.com</a></div></div></div>
+          <div class="contact-row"><span class="c-icon">📍</span><div><div class="c-label">Address</div><div class="c-val">8 Prankunj Society, Kankaria Road,<br>Maninagar, Ahmedabad – 380028<br><span style="font-size:12px;color:var(--text-mid)">(Near Domino's Pizza, Maninagar)</span></div></div></div>
+          <div class="contact-row"><span class="c-icon">🕐</span><div><div class="c-label">Timings</div><div class="c-val">Mon – Sat: 8:00 AM – 6:00 PM</div></div></div>
+        </div>
+      </div>
+      <form class="form-card reveal" id="admissionForm">
+        <h3>🌈 Enquire for Admission</h3>
+        <p>We'll get back to you within 24 hours! Or call <strong style="color:var(--sky-deep)">+91 98252 76074</strong></p>
+        <div class="fg row2"><div><label for="parentName">Parent's Name *</label><input id="parentName" name="parentName" type="text" placeholder="Your full name" required></div><div><label for="phone">Phone Number *</label><input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" required></div></div>
+        <div class="fg"><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="youremail@example.com"></div>
+        <div class="fg row2"><div><label for="childName">Child's Name *</label><input id="childName" name="childName" type="text" placeholder="Child's name" required></div><div><label for="childAge">Child's Age *</label><input id="childAge" name="childAge" type="text" placeholder="e.g. 3 years 2 months" required></div></div>
+        <div class="fg"><label>Program Interested In *</label>
+          <select id="program" name="program" required><option value="">Select a program...</option><option>Toddler Care (1.5 – 2.5 yrs)</option><option>Nursery (2.5 – 3.5 yrs)</option><option>Jr. K.G. (3.5 – 4.5 yrs)</option><option>Sr. K.G. (4.5 – 6 yrs)</option><option>Day Care Center (Full Day)</option></select>
+        </div>
+        <div class="fg"><label for="message">Message (optional)</label><textarea id="message" name="message" rows="3" placeholder="Any questions, special requirements, or how you heard about us..."></textarea></div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px" type="submit">Send Enquiry 🚀</button>
+        <div class="form-success" id="formSuccess" role="status">Thank you! Your enquiry is ready. We will contact you within 24 hours.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <h3><span style="color:#FF7070" class="fn">Fairyland</span> Pre-School</h3>
+        <p>The Sky For Angels ✨<br>Ahmedabad's oldest and most reputed preschool, bringing the Montessori Method of education to little angels in Maninagar since 1999. Rated 4.8★ by 408+ families.</p>
+        <div class="socials">
+          <a class="soc" href="https://www.facebook.com/fairylandpreschool1999/" target="_blank">📘</a>
+          <a class="soc" href="https://www.instagram.com/fairylandpreschool1999/" target="_blank">📸</a>
+          <a class="soc" href="mailto:fairylandpreschool@yahoo.co.in">✉️</a>
+          <a class="soc" href="https://wa.me/919825276074" target="_blank">💬</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Quick Links</h4>
+        <ul class="foot-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Programs</h4>
+        <ul class="foot-links">
+          <li><a href="#">Toddler Care</a></li>
+          <li><a href="#">Nursery</a></li>
+          <li><a href="#">Jr. K.G.</a></li>
+          <li><a href="#">Sr. K.G.</a></li>
+          <li><a href="#">Day Care Center</a></li>
+        </ul>
+      </div>
+      <div class="foot-col foot-contact">
+        <h4>Contact Us</h4>
+        <p><span>📞</span><a href="tel:+919825276074" style="color:rgba(255,255,255,0.55);text-decoration:none">+91 98252 76074</a></p>
+        <p><span>✉️</span><a href="mailto:fairylandpreschool@yahoo.co.in" style="color:rgba(255,255,255,0.55);text-decoration:none">fairylandpreschool@yahoo.co.in</a></p>
+        <p><span>🌐</span><a href="http://www.fairylandpreschool.com" target="_blank" style="color:rgba(255,255,255,0.55);text-decoration:none">fairylandpreschool.com</a></p>
+        <p><span>📍</span>8 Prankunj Society, Kankaria Road, Maninagar, Ahmedabad – 380028<br><span style="font-size:11px;opacity:0.7;margin-left:22px">(Near Domino's Pizza)</span></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 <strong style="color:rgba(255,255,255,0.7)">Fairyland Pre-School</strong>, Ahmedabad. All rights reserved. &nbsp;|&nbsp; 4.8★ Justdial · 408 Reviews · 96% Recommend &nbsp;|&nbsp; Made with 💙 for our little angels.
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919825276074" class="wa" title="WhatsApp us">💬</a>
+
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Gallery preview">
+  <div class="lightbox-card">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button>
+    <div id="lightboxMedia"></div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<script>
+  const bb=document.getElementById('bb');
+  const cols=['#3F91C5','#A9D7E8','#F4C84F','#A7C989','#6F5D80','#ECA96C','#D98E82'];
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(!reduceMotion && bb){
+    for(let i=0;i<20;i++){
+      const b=document.createElement('div');b.className='bubble';
+      const s=16+Math.random()*55;
+      b.style.cssText=`width:${s}px;height:${s}px;background:${cols[Math.floor(Math.random()*cols.length)]};left:${Math.random()*100}%;animation-duration:${20+Math.random()*25}s;animation-delay:${-Math.random()*22}s;`;
+      bb.appendChild(b);
+    }
+  }
+
+  const nav=document.querySelector('nav');
+  const navLinks=document.getElementById('navLinks');
+  const mobileToggle=document.getElementById('mobileToggle');
+  const links=[...document.querySelectorAll('.nav-links a')];
+
+  function closeMenu(){
+    navLinks.classList.remove('open');
+    mobileToggle.classList.remove('open');
+    mobileToggle.setAttribute('aria-expanded','false');
+  }
+
+  mobileToggle.addEventListener('click',()=>{
+    const open=navLinks.classList.toggle('open');
+    mobileToggle.classList.toggle('open',open);
+    mobileToggle.setAttribute('aria-expanded',String(open));
+  });
+  links.forEach(link=>link.addEventListener('click',closeMenu));
+
+  window.addEventListener('scroll',()=>{
+    nav.classList.toggle('scrolled',window.scrollY>12);
+  },{passive:true});
+
+  const sections=[...document.querySelectorAll('section[id]')];
+  const navObs=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        links.forEach(link=>link.classList.toggle('active',link.getAttribute('href')===`#${entry.target.id}`));
+      }
+    });
+  },{rootMargin:'-35% 0px -55% 0px',threshold:0});
+  sections.forEach(section=>navObs.observe(section));
+
+  document.querySelectorAll('.g-tab').forEach(t=>{
+    t.addEventListener('click',function(){
+      document.querySelectorAll('.g-tab').forEach(x=>x.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  const lightbox=document.getElementById('lightbox');
+  const lightboxMedia=document.getElementById('lightboxMedia');
+  const lightboxCaption=document.getElementById('lightboxCaption');
+  const lightboxClose=document.getElementById('lightboxClose');
+
+  function openLightbox(item){
+    const img=item.querySelector('img');
+    const title=item.dataset.title || img?.alt || item.innerText.trim().split('\n')[0] || 'Fairyland gallery';
+    lightboxCaption.textContent=title;
+    lightboxMedia.innerHTML=img
+      ? `<img src="${img.src.replace('w=300','w=900').replace('w=600','w=900')}" alt="${img.alt}">`
+      : `<div class="lightbox-placeholder">${title}</div>`;
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden','false');
+    lightboxClose.focus();
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden','true');
+    lightboxMedia.innerHTML='';
+  }
+
+  document.querySelectorAll('.g-item').forEach(item=>{
+    item.addEventListener('click',()=>openLightbox(item));
+    item.addEventListener('keydown',event=>{
+      if(event.key==='Enter' || event.key===' '){
+        event.preventDefault();
+        openLightbox(item);
+      }
+    });
+  });
+  lightboxClose.addEventListener('click',closeLightbox);
+  lightbox.addEventListener('click',event=>{if(event.target===lightbox)closeLightbox();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeLightbox();});
+
+  const form=document.getElementById('admissionForm');
+  const formSuccess=document.getElementById('formSuccess');
+  form.addEventListener('submit',event=>{
+    event.preventDefault();
+    if(!form.reportValidity())return;
+    const data=new FormData(form);
+    const text=[
+      'Admission enquiry from Fairyland website',
+      `Parent: ${data.get('parentName')}`,
+      `Phone: ${data.get('phone')}`,
+      `Email: ${data.get('email') || 'Not shared'}`,
+      `Child: ${data.get('childName')}`,
+      `Age: ${data.get('childAge')}`,
+      `Program: ${data.get('program')}`,
+      `Message: ${data.get('message') || 'No extra message'}`
+    ].join('\n');
+    formSuccess.classList.add('show');
+    window.open(`https://wa.me/919825276074?text=${encodeURIComponent(text)}`,'_blank');
+    form.reset();
+  });
+
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*70);obs.unobserve(e.target);}});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
